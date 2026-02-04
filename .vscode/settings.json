@@ -1,0 +1,26 @@
+{
+  // uncomment entries once all libraries have been installed via 'npm install'
+  "eslint.validate": [
+    // "javascript",
+    // "typescript",
+    // "csv",
+    // "csv (semicolon)",
+    // "tab",
+    // "tsv"
+  ],
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "anubhavdb",
+      "database": "${workspaceFolder:capmapp}/db.sqlite"
+    },
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "bhavanishdb",
+      "database": "${workspaceFolder:capmapp}/db.sqlite"
+    }
+  ],
+  "sqltools.useNodeRuntime": true
+}
