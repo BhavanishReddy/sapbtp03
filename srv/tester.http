@@ -1,0 +1,76 @@
+###Get the service document
+http://localhost:4004/odata/v4/CatalogService
+
+###Get service metadata document
+http://localhost:4004/odata/v4/CatalogService/$metadata
+
+###Get all employee data
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet
+
+###Pagination - load data chunk by chunk
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet?$top=1&$skip=1
+
+###Filtering of data = WHERE condition
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet?$filter=salaryAmount ge 50000
+
+###Counting records
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet/$count
+
+###Get single record by key
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C19787FB
+
+###POST - To create new employee
+POST http://localhost:4004/odata/v4/CatalogService/EmployeeSet
+Content-Type: application/json
+
+{
+  "nameFirst": "Anubhav",
+  "nameMiddle": null,
+  "nameSecond": "Oberoy",
+  "nameIntials": null,
+  "sex": null,
+  "language": null,
+  "phoneNumber": null,
+  "email": null,
+  "loginName": null,
+  "Currency_code": null,
+  "salaryAmount": 55000,
+  "accountNumber": "111222333",
+  "bankId": "51000065",
+  "bankName": "SBO"
+}
+
+###Get to read the single employee
+GET http://localhost:4004/odata/v4/CatalogService/EmployeeSet/c383df92-37e3-420d-bd7d-4af38493328a
+
+###Patch to update employee data
+PATCH http://localhost:4004/odata/v4/CatalogService/EmployeeSet/c383df92-37e3-420d-bd7d-4af38493328a
+Content-Type: application/json
+
+{
+    "salaryAmount":95959
+}
+
+###Delete Employee data
+DELETE http://localhost:4004/odata/v4/CatalogService/EmployeeSet/c383df92-37e3-420d-bd7d-4af38493328a
+
+###Get all POs
+http://localhost:4004/odata/v4/CatalogService/POs
+
+###Get Single PO
+http://localhost:4004/odata/v4/CatalogService/POs/02BD2137-0890-1EEA-A6C2-BB55C1979004
+
+###Get the PO and its Items data together - Associations
+http://localhost:4004/odata/v4/CatalogService/POs/02BD2137-0890-1EEA-A6C2-BB55C1979004?$expand=Items
+
+###Calling an action
+POST http://localhost:4004/odata/v4/CatalogService/POs/02BD2137-0890-1EEA-A6C2-BB55C1979004/boost
+Content-Type: application/json
+
+{
+
+}
+
+###Calling CAP function
+
+GET http://localhost:4004/odata/v4/CatalogService/POs/02BD2137-0890-1EEA-A6C2-BB55C1979004/largestOrder()
