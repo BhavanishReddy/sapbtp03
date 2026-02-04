@@ -1,7 +1,7 @@
 using {anubhavdb.master as master, 
     anubhavdb.trans as transaction } from '../db/demo';
 
-service Myservice{
+service My{
 
     entity StudentSet as projection on master.student;
     entity StandardSet as projection on master.standards;
