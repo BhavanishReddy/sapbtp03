@@ -34,7 +34,7 @@ Content-Type: application/json
   "email": null,
   "loginName": null,
   "Currency_code": null,
-  "salaryAmount": 55000,
+  "salaryAmount": 100000,
   "accountNumber": "111222333",
   "bankId": "51000065",
   "bankName": "SBO"
@@ -74,3 +74,9 @@ Content-Type: application/json
 ###Calling CAP function
 
 GET http://localhost:4004/odata/v4/CatalogService/POs/02BD2137-0890-1EEA-A6C2-BB55C1979004/largestOrder()
+
+###Getting product data from cds view
+GET http://localhost:4004/odata/v4/MyService/ProductOrdersSet/74867AD200E41EDBA5D8B06B26EB4052
+
+###Complete custom entity which has structure from DB but logic by our own handling
+GET http://localhost:4004/odata/v4/MyService/ReadEmployeeSrv
